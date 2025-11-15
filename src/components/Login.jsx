@@ -87,6 +87,7 @@ export default function Login() {
           type="email"
           onChange={handleChange}
           value={form.email}
+          data-cy="form-email"
         />
         {form.email !== "" && errors.email && (
           <p style={{ color: "red", fontSize: "0.9rem" }}>{errors.email}</p>
@@ -102,6 +103,7 @@ export default function Login() {
           type="password"
           onChange={handleChange}
           value={form.password}
+          data-cy="form-password"
         />
         {form.password !== "" && errors.password && (
           <p style={{ color: "red", fontSize: "0.9rem" }}>{errors.password}</p>
@@ -115,6 +117,7 @@ export default function Login() {
           id="terms"
           onChange={handleChange}
           checked={form.terms}
+          data-cy="form-terms"
         />
         <Label htmlFor="terms">
           I agree to terms of service and privacy policy
@@ -122,7 +125,7 @@ export default function Login() {
       </FormGroup>
 
       <FormGroup className="text-center p-4">
-        <Button color="primary" disabled={!isFormValid}>
+        <Button color="primary" disabled={!isFormValid} data-cy="form-button">
           Sign In
         </Button>
       </FormGroup>
